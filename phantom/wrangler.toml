@@ -1,0 +1,14 @@
+name = "lithium"
+
+main = "src/index.ts"
+send_metrics = false
+workers_dev = false
+route = "bbs.barabariproject.org/e1/*"
+compatibility_date = "2022-07-04"
+
+kv_namespaces = [
+  { binding = "ERR", id = "47c7d60a8f4645b9913ca5a4b69d6be7", preview_id = "47c7d60a8f4645b9913ca5a4b69d6be7" }
+]
+
+[site]
+bucket = "./static"
