@@ -1,1 +1,9 @@
-{"dependencies":{"hono":"^3.4.1"}}
+{
+  "name": "microback",
+  "version": "0.0.1",
+  "dependencies": {
+    "hono": "^3.4.1"
+  },
+  "main": "index.ts",
+  "author": "plutoniumm"
+}

@@ -33,6 +33,8 @@ app.get('/:icon', async (c) => {
       'Content-Type': 'image/svg+xml'
     });
   }
+
+  return c.text('icon type not found', 404);
 });
 
 export default app;
