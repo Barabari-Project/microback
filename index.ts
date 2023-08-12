@@ -8,6 +8,12 @@ interface BResponse {
 // sensible defaults
 const routes = {
   i1: {
+    static: (path, options = {}) => {
+      let search = new URLSearchParams(options).toString();
+      if (search) search = "?" + search;
+
+      return BBS + "/i1/" + path + search;
+    },
     get: async (path, options = {}, type = "text"): Promise<BResponse> => {
       let error = null;
       const res = await fetch(BBS + "/i1/" + path, options)
@@ -30,10 +36,18 @@ const routes = {
 
 export default routes;
 
-// Sample
+// Sample GET
 /*
-  import routes from './routes';
+  import BBS from './routes';
 
-  const svg = await routes.i1.GET('fab:github');
+  const svg = await BBS.i1.get('fab:github');
   console.log(svg);
+*/
+
+// Sample STATIC
+/*
+  import BBS from './routes';
+
+  const svg = BBS.i1.static('fab:github', { size: 32 });
+  // https://bbs.barabariproject.org/i1/fab:github?size=32
 */

@@ -1,6 +1,6 @@
 {
   "name": "microback",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "hono": "^3.4.1"
   },
