@@ -32,6 +32,9 @@ const routes = {
         }
       }
     }
+  },
+  p2: {
+    none: (url: string): string => BBS + "/p2/?url=" + url,
   }
 };
 
