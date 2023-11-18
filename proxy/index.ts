@@ -5,21 +5,7 @@ const app = new Hono({ strict: false })
   .basePath('/p1')
   .use('*', cors({ origin: '*' }));
 
-const get30x = (source: string): Promise<string> =>
-  fetch(source, {
-    method: 'HEAD',
-    redirect: 'follow'
-  })
-    .then((response) => response.url);
-
-app.get('/redirect', (c) => {
-  const { url } = c.req.query();
-  if (!url) return c.text('url is required', 400);
-
-  return get30x(url).then(c.text);
-});
-
-app.get('/proxy', (c) => {
+app.get('/', (c) => {
   const { url } = c.req.query();
   if (!url) return c.text('url is required', 400);
 
@@ -36,7 +22,7 @@ app.get('/proxy', (c) => {
       headers: response.headers
     });
   });
-}).post('/proxy', async (c) => {
+}).post('/', async (c) => {
   const { url } = c.req.query();
   if (!url) return c.text('url is required', 400);
 

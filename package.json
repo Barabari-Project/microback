@@ -1,6 +1,6 @@
 {
   "name": "microback",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A microservice backend for The Barabari Project",
   "dependencies": {
     "hono": "^3.4.1"
